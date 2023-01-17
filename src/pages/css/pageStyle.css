@@ -1,0 +1,21 @@
+.cardsBlock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+.container {
+    font-family: "Open Sans", sans-serif;
+    position: relative;
+    left: 0;
+    display: flex;
+}
+
+@media screen and (max-width: 1400px) {
+    .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
