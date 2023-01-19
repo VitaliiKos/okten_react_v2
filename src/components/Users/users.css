@@ -1,0 +1,52 @@
+.wrap{
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px;
+}
+.usersList{
+    width: 20%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.postsList{
+    width: 75%;
+}
+.commentsBlock {
+    position: relative;
+}
+.usersList, .commentsBlock {
+
+    box-sizing: border-box;
+    padding: 10px 5px;
+    margin: 10px;
+    align-items: stretch;
+
+}
+
+.postsList{
+
+    box-sizing: border-box;
+    padding: 15px 5px;
+    margin: 20px 10px;
+    align-items: stretch;
+
+}
+
+.commentsBlock, .postsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.commentsBlock>.title, .postsList>.title{
+    width: 100%;
+    position: inherit;
+    color: gold;
+    margin: 20px;
+    font-size: 32px;
+}
