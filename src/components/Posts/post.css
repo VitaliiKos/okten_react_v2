@@ -76,7 +76,6 @@
     flex-direction: column;
 }
 
-/**************************************************/
 .commentButton button {
     position: absolute;
     top: 0;
@@ -177,7 +176,6 @@
     margin: 10px 20px 20px;
 }
 
-/**************************************************/
 @media screen and (max-width: 1400px) {
     .postCard {
         width: 270px;

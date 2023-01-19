@@ -34,29 +34,14 @@ const Users = () => {
             <div className={'usersList'}>
 
                 {
-                    <>
-                        {/*<div className={'title'}>*/}
-                            {/*<h2>Users</h2>*/}
-                        {/*</div>*/}
-                        {
                             users.map(user => <User key={user.id} user={user} getPosts={getPosts}/>)
-                        }
-                    </>
                 }
             </div>
             <div className={'postsList'}>
                 {
                     userPosts &&
-                    <>
-                        {/*<div className={'title'}>*/}
-                            {/*<h2>Posts</h2>*/}
-                        {/*</div>*/}
-                        {
                             userPosts.map(userPost => <Posts key={userPost.id} userPost={userPost}
                                                              getComments={getComments}/>)
-                        }
-                    </>
-
                 }
             </div>
 

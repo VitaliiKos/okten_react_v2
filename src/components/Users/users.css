@@ -1,11 +1,12 @@
-.wrap{
+.wrap {
     width: 95%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     column-gap: 20px;
 }
-.usersList{
+
+.usersList {
     width: 20%;
     display: flex;
     flex-wrap: nowrap;
@@ -13,12 +14,14 @@
     justify-content: flex-start;
 }
 
-.postsList{
+.postsList {
     width: 75%;
 }
+
 .commentsBlock {
     position: relative;
 }
+
 .usersList, .commentsBlock {
 
     box-sizing: border-box;
@@ -28,7 +31,7 @@
 
 }
 
-.postsList{
+.postsList {
 
     box-sizing: border-box;
     padding: 15px 5px;
@@ -43,7 +46,8 @@
     justify-content: center;
 
 }
-.commentsBlock>.title, .postsList>.title{
+
+.commentsBlock > .title, .postsList > .title {
     width: 100%;
     position: inherit;
     color: gold;
