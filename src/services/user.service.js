@@ -1,23 +1,10 @@
-import {urls} from "../urls";
-
-
-const getUsers =()=>{
-    return fetch(urls.users)
-        .then(value => value.json());
-}
-
-const getUserById =(id)=>{
-    return fetch(`${urls.user}/${id}`)
-        .then(value => value.json());
-}
-
-const getPosts =(id)=>{
-    return fetch(`${urls.posts}${id}`)
-        .then(value => value.json());
-}
+import {userAxiosService} from "./userAxios.service";
+import {userUrls} from "../urls";
 
 export const userService = {
-    getUsers,
-    getUserById,
-    getPosts
-};
+    getAll: () => userAxiosService.get(userUrls.users).then(value => value.data),
+    getById: (id) => userAxiosService.get(`${userUrls.users}/${id}`).then(value => value.data),
+    getPosts: (userID) => userAxiosService.get(`${userUrls.users}/${userID}/posts`).then(value => value.data),
+    getComments: (postID) => userAxiosService.get(`${userUrls.comments}/${postID}/comments`).then(value => value.data),
+
+}
