@@ -1,8 +1,8 @@
-const baseURL = 'https://jsonplaceholder.typicode.com';
+const userBaseURL = 'https://jsonplaceholder.typicode.com';
 
-export default baseURL
+export default userBaseURL;
 
 export const userUrls = {
-    users: `${baseURL}/users`,
-    comments: `${baseURL}/posts`,
+    users: `${userBaseURL}/users`,
+    comments: `${userBaseURL}/posts`,
 };

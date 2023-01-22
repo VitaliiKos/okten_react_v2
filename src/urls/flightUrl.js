@@ -1,7 +1,7 @@
-const baseURL = 'https://api.spacexdata.com/v4/launches/';
+const flightBaseURL = 'https://api.spacexdata.com/v4/launches/';
 
-export default baseURL
+export default flightBaseURL
 
 export const flightUrls = {
-    flights: `${baseURL}`
+    flights: `${flightBaseURL}`
 };

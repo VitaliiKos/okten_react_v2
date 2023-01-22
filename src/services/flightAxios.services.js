@@ -1,7 +1,6 @@
 import axios from "axios";
 
-import baseURL from "../urls/flightUrl";
+import userBaseURL from "../urls/userUrls";
 
-const flightAxiosService = axios.create({baseURL});
+export const flightAxiosService = axios.create({baseURL:userBaseURL});
 
-export {flightAxiosService};

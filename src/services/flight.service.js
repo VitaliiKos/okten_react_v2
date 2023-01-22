@@ -1,7 +1,7 @@
 import {flightAxiosService} from "./flightAxios.services";
-import flightUrl from "../urls/flightUrl";
+import {flightUrls} from "../urls";
 
 export const flightService = {
-    getAll: () => flightAxiosService.get(flightUrl).then(value => value.data),
+    getAll: () => flightAxiosService.get(flightUrls.flights).then(value => value.data),
 
 }
