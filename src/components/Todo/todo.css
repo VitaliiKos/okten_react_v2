@@ -1,0 +1,9 @@
+.todoItem h4, .todoItem h3 {
+    margin: 5px;
+}
+
+.todoItem {
+    background-color: #f6f5f5;
+    margin: 0 0 10px 20px;
+    border-left: 2px solid cornflowerblue;
+}

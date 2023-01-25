@@ -1,0 +1,8 @@
+.wrap {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.currentPost {
+    width: 40%;
+}
