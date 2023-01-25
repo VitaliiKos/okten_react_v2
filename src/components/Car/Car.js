@@ -6,10 +6,14 @@ import './car.css';
 const Car = ({carItem, setUpdateCar, setCars}) => {
     const {id, brand, price, year} = carItem;
 
-    const deleteCar = (carId) => {
-        carService.deleteById(carId).then(() => {
-            carService.getAll().then(value => setCars([...value]))
-        })
+    const deleteCar = async (carId) => {
+        try {
+            await carService.deleteById(carId).then(() => {
+                carService.getAll().then(value => setCars([...value]))
+            })
+        } catch (e) {
+            console.log(e.response.data)
+        }
     }
 
     return (
