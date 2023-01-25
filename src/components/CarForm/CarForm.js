@@ -24,10 +24,15 @@ const CarForm = ({setCars, updateCar}) => {
 
     const setForm = async (car) => {
         if (updateCar) {
-            carService.updateById(updateCar.id, car).then(() => {
-                carService.getAll().then(value => setCars([...value]))
+            try {
+                await carService.updateById(updateCar.id, car).then(() => {
+                    carService.getAll().then(value => setCars([...value]))
+                })
                 reset()
-            })
+
+            } catch (error) {
+                console.log(error.response.data)
+            }
         } else {
 
             try {
