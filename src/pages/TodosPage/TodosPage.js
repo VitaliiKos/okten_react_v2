@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import {todosService} from "../../services";
 import {Todo} from "../../components";
+import css from './todosPage.module.css';
 
 const TodosPage = () => {
 
@@ -12,11 +13,11 @@ const TodosPage = () => {
     }, [])
 
     return (
-        <>
+        <div className={css.listBlock}>
             {
                 todos.length && todos.map(todo => <Todo key={todo.id} todo={todo}/>)
             }
-        </>
+        </div>
     );
 };
 

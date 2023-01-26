@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import {albumsService} from "../../services";
 import {Album} from "../../components";
+import css from './albumPage.module.css';
 
 const AlbumsPage = () => {
 
@@ -12,7 +13,7 @@ const AlbumsPage = () => {
     }, [])
 
     return (
-        <div>
+        <div className={css.listBlock}>
             {
                 albums.length && albums.map(album => <Album key={album.id} albumItem={album}/>)
             }

@@ -15,7 +15,7 @@ const CommentsPage = () => {
 
     return (
         <div className={css.wrap}>
-            <div>
+            <div className={css.listBlock}>
                 {
                     comments.length && comments.map(comment => <Comment key={comment.id} commentUtem={comment}/>)
                 }

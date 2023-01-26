@@ -1,0 +1,43 @@
+.container {
+    max-width: 500px;
+    min-height: 350px;
+    border-radius: 20px;
+    position: fixed;
+    transition: 1.5s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.side {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px 50px;
+    color: rgba(196, 93, 62, 0.88);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    border-radius: 20px;
+}
+
+.content {
+    transform: translatez(70px) scale(0.8);
+}
+
+.content h1 {
+    position: relative;
+}
+
+.content p {
+    margin-top: 50px;
+    line-height: 2em;
+}
+
+.front {
+    z-index: 2;
+    background-size: 100vh;
+    background-size: cover;
+    background-image: url(https://userscontent2.emaze.com/images/f9538183-0ff9-478f-b964-c8ab90421e3b/3d28e192fda5c17250f96a2779c84475.jpg);
+}
+
+.container:hover {
+    transform: rotateY(-360deg);
+}
