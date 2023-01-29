@@ -1,0 +1,47 @@
+
+.wrapper {
+    background: -moz-linear-gradient(-45deg, #d2dfed 0%, #c8d7eb 26%, #a6c0e3 47%, #a6c0e3 47%, #bed0ea 51%, #afc7e8 62%, #bad0ef 75%, #99b5db 88%, #799bc8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #d2dfed 0%, #c8d7eb 26%, #a6c0e3 47%, #a6c0e3 47%, #bed0ea 51%, #afc7e8 62%, #bad0ef 75%, #99b5db 88%, #799bc8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #d2dfed 0%, #c8d7eb 26%, #a6c0e3 47%, #a6c0e3 47%, #bed0ea 51%, #afc7e8 62%, #bad0ef 75%, #99b5db 88%, #799bc8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d2dfed', endColorstr='#799bc8', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+
+    min-height: 100vh;
+}
+
+.menu {
+    min-height: 80px;
+    background-color: #282c34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu a {
+    color: gold;
+    font-size: 28px;
+    text-decoration: none;
+
+}
+
+.content {
+    width: 95%;
+    margin: 0 auto;
+    height: calc(100vh - 142px);
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.menu a[class='active'] {
+    text-decoration: underline;
+    color: red;
+}
+
+.footer {
+    min-height: 30px;
+    background-color: #282c34;
+    color: gold;
+    display: flex;
+    justify-content: center;
+    padding-right: 28px;
+}

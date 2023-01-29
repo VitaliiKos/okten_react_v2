@@ -1,0 +1,38 @@
+.dogItem{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    align-items: center;
+    width: 300px;
+    justify-content: space-between;
+}
+.buttonDel {
+    align-items: center;
+    background-color: initial;
+    background-image: linear-gradient(rgba(179, 132, 201, .84), rgba(57, 31, 91, .84) 50%);
+    border-radius: 42px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    font-family: Quicksand, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    justify-content: center;
+    margin: 0;
+    padding: 18px 18px;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    vertical-align: baseline;
+}
+
+.buttonDel:hover {
+    background-image: linear-gradient(#B384C9, #391F5B 50%);
+}
+
+@media (min-width: 768px) {
+    .buttonDel {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+}
