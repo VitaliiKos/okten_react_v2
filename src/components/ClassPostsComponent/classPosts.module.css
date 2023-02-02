@@ -1,0 +1,24 @@
+.postsBlock {
+    display: flex;
+    flex-wrap: nowrap;
+    color: cornflowerblue;
+}
+
+.postsList {
+    width: 60%;
+    font-size: 10px;
+}
+
+.commentsList h2, .postsList h2 {
+    margin: 5px;
+}
+
+.commentsList {
+    position: fixed;
+    width: 35%;
+    right: 10px;
+    height: 60vh;
+    font-size: 10px;
+}
+
+

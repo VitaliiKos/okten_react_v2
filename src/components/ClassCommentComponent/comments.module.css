@@ -1,0 +1,10 @@
+.commentCard {
+    border: 2px solid #9c0cb1;
+    margin: 3px 5px;
+    padding: 3px;
+    word-break: break-word;
+}
+
+.commentCard h3 {
+    margin: 3px;
+}

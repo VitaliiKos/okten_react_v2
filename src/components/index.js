@@ -4,3 +4,6 @@ export * from './Cats/Cats';
 export * from './Dog/Dog';
 export * from './Dogs/Dogs';
 export * from './Header/Header';
+export * from './ClassPostsComponent/ClassPostsComponent';
+export * from './Post/Post';
+export * from './ClassCommentComponent/ClassCommentComponent';
