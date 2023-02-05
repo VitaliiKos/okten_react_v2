@@ -29,7 +29,6 @@ const myUserReducer = (state, action) => {
 
         case userActionTypes.UPDATE_BY_ID:
             const indexForUpdate = state.findIndex(value => value.id === action.payload.id);
-            console.log(state)
             state[indexForUpdate] = {id: action.payload.id, ...action.payload.user}
 
             return [...state]

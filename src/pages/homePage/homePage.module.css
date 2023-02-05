@@ -1,0 +1,11 @@
+.title {
+    margin-top: 60px;
+    background-color: #eaf1e3;
+    height: 100vh;
+}
+
+.title h1 {
+    padding-top: 80px;
+    font-size: 50px;
+    color: #2c3e97;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;}
