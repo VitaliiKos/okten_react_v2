@@ -2,11 +2,11 @@ import {Route, Routes} from "react-router-dom";
 
 import {MainLayout} from "./Layout";
 import {AnimalsPage, HomePage, PostsPage} from "./pages";
-import './App.css';
+import css from './App.css';
 
 function App() {
     return (
-        <div className="App">
+        <div className={css.App}>
             <Routes>
                 <Route path={'/'} element={<MainLayout/>}>
                     <Route index element={<HomePage/>}/>
