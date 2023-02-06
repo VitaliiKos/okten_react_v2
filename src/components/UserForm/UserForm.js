@@ -5,10 +5,10 @@ import {useAppReducer} from "../../hooks/useAppReducer";
 import {userActions} from "../../reducers/userReducer";
 import css from './userForm.module.css'
 
-const UserForm = ({userForUpdate, setUserForUpdate}) => {
+const UserForm = () => {
 
     const {register, handleSubmit, reset, setValue} = useForm();
-    const [, dispatch] = useAppReducer(value => value.userReducer);
+    const [{userForUpdate}, dispatch] = useAppReducer(value => value.userReducer);
 
     useEffect(() => {
         if (userForUpdate) {
@@ -22,13 +22,12 @@ const UserForm = ({userForUpdate, setUserForUpdate}) => {
     const setForm = (user) => {
         if (userForUpdate) {
             dispatch(userActions.UPDATE_BY_ID(userForUpdate.id, user))
-            setUserForUpdate(null)
+            dispatch(userActions.USER_FOR_UPDATE(null))
             reset()
         } else {
-            if (user.name && user.surname && user.age){
+            if (user.name && user.surname && user.age) {
                 dispatch(userActions.ADD(user))
                 reset()
-
             }
         }
     }

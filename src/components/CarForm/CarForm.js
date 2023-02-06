@@ -5,9 +5,9 @@ import {useAppReducer} from "../../hooks/useAppReducer";
 import {carActions} from "../../reducers/carReducer";
 import css from "./carForm.module.css";
 
-const CarForm = ({carForUpdate, setCarForUpdate}) => {
+const CarForm = () => {
     const {register, setValue, reset, handleSubmit} = useForm();
-    const [, dispatch] = useAppReducer(value => value.carReducer);
+    const [{carForUpdate}, dispatch] = useAppReducer(value => value.carReducer);
 
     useEffect(() => {
         if (carForUpdate) {
@@ -22,7 +22,7 @@ const CarForm = ({carForUpdate, setCarForUpdate}) => {
     function setCarForm(car) {
         if (carForUpdate) {
             dispatch(carActions.UPDATE_BY_ID(carForUpdate.id, car))
-            setCarForUpdate(null)
+            dispatch(carActions.CAR_FOR_UPDATE(null))
             reset()
         } else {
             if(car.brand && car.year && car.price){

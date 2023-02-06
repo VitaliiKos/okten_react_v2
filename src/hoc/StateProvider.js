@@ -1,14 +1,14 @@
 import React, {createContext, useReducer} from 'react';
 
 import {initialUsers, myUserReducer} from "../reducers/userReducer";
-import {myCarReducer} from "../reducers/carReducer";
+import {initialCars, myCarReducer} from "../reducers/carReducer";
 
 const StateContext = createContext(null);
 
 const StateProvider = ({children}) => {
     const reducers = {
         userReducer: useReducer(myUserReducer, null, initialUsers),
-        carReducer: useReducer(myCarReducer, null, initialUsers)
+        carReducer: useReducer(myCarReducer, null, initialCars)
     }
 
 

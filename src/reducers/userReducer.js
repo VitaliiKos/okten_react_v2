@@ -10,28 +10,34 @@ const userActions = {
     DELETE_BY_ID: (id) => ({type: userActionTypes.DELETE_BY_ID, payload: id}),
     UPDATE_BY_ID: (id, user) => ({type: userActionTypes.UPDATE_BY_ID, payload: {id, user}}),
     USER_FOR_UPDATE: (item) => ({type: userActionTypes.USER_FOR_UPDATE, payload: item}),
-
 }
 
-const initialUsers = () => [];
+const initialUsers = () => ({
+    users: [],
+    userForUpdate: null
+});
 
 const myUserReducer = (state, action) => {
     switch (action.type) {
         case userActionTypes.ADD:
-            const slice = state.slice(-1);
+            const slice = state.users.slice(-1);
             const id = slice.length ? slice[0].id + 1 : 0
-            return [...state, {id, ...action.payload}]
+            state.users.push({id, ...action.payload})
+            return {...state}
 
         case userActionTypes.DELETE_BY_ID:
-            const indexForDelete = state.findIndex(value => value.id === action.payload);
-            state.splice(indexForDelete, 1)
-            return [...state]
+            const indexForDelete = state.users.findIndex(value => value.id === action.payload);
+            state.users.splice(indexForDelete, 1);
+            return {...state};
 
         case userActionTypes.UPDATE_BY_ID:
-            const indexForUpdate = state.findIndex(value => value.id === action.payload.id);
-            state[indexForUpdate] = {id: action.payload.id, ...action.payload.user}
+            const indexForUpdate = state.users.findIndex(value => value.id === action.payload.id);
+            state.users[indexForUpdate] = {id: action.payload.id, ...action.payload.user};
+            return {...state};
 
-            return [...state]
+        case userActionTypes.USER_FOR_UPDATE:
+            state.userForUpdate = action.payload;
+            return {...state};
         default :
             throw new Error();
     }

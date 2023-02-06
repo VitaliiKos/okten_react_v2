@@ -4,7 +4,8 @@ import {userActions} from "../../reducers/userReducer";
 import {useAppReducer} from "../../hooks/useAppReducer";
 import css from './user.module.css';
 
-const User = ({user, setUserForUpdate}) => {
+const User = ({user}) => {
+
     const [, dispatch] = useAppReducer(value => value.userReducer);
     const {id, name, surname, age} = user;
 
@@ -16,7 +17,7 @@ const User = ({user, setUserForUpdate}) => {
             <h4>age: {age}</h4>
             <div className={css.userButton}>
                 <button onClick={() => dispatch(userActions.DELETE_BY_ID(id))}>Delete</button>
-                <button onClick={() => setUserForUpdate(user)}>Update</button>
+                <button onClick={() => dispatch(userActions.USER_FOR_UPDATE(user))}>Update</button>
             </div>
         </div>
     );

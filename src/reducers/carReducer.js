@@ -3,7 +3,7 @@ const carActionTypes = {
     DELETE_BY_ID: 'DELETE_BY_ID',
     UPDATE_BY_ID: 'UPDATE_BY_ID',
     CAR_FOR_UPDATE: 'CAR_FOR_UPDATE'
-}
+};
 
 const carActions = {
     ADD: (item) => ({type: carActionTypes.ADD, payload: item}),
@@ -11,27 +11,35 @@ const carActions = {
     UPDATE_BY_ID: (id, car) => ({type: carActionTypes.UPDATE_BY_ID, payload: {id, car}}),
     CAR_FOR_UPDATE: (item) => ({type: carActionTypes.CAR_FOR_UPDATE, payload: item}),
 
-}
+};
 
-const initialCars = () => [];
+const initialCars = () => ({
+    cars: [],
+    carForUpdate: null
+});
 
 const myCarReducer = (state, action) => {
     switch (action.type) {
         case carActionTypes.ADD:
-            const slice = state.slice(-1);
-            const id = slice.length ? slice[0].id + 1 : 0
-            return [...state, {id, ...action.payload}]
+            const slice = state.cars.slice(-1);
+            const id = slice.length ? slice[0].id + 1 : 0;
+            state.cars.push({id, ...action.payload});
+            return {...state};
 
         case carActionTypes.DELETE_BY_ID:
-            const indexForDelete = state.findIndex(value => value.id === action.payload);
-            state.splice(indexForDelete, 1)
-            return [...state]
+            const indexForDelete = state.cars.findIndex(value => value.id === action.payload);
+            state.cars.splice(indexForDelete, 1);
+            return {...state};
 
         case carActionTypes.UPDATE_BY_ID:
-            const indexForUpdate = state.findIndex(value => value.id === action.payload.id);
-            state[indexForUpdate] = {id: action.payload.id, ...action.payload.car}
+            const indexForUpdate = state.cars.findIndex(value => value.id === action.payload.id);
+            state.cars[indexForUpdate] = {id: action.payload.id, ...action.payload.car}
+            return {...state};
 
-            return [...state]
+        case carActionTypes.CAR_FOR_UPDATE:
+            state.carForUpdate = action.payload;
+            return {...state};
+
         default :
             throw new Error();
     }
