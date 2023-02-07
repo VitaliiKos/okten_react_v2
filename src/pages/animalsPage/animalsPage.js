@@ -18,9 +18,13 @@ function reducer(state, action) {
             }
             return {...state};
         case 'DELETE_CAT':
-            return {...state, cats: state.cats.filter(value => value.id !== action.payload)};
+            const catID = state.cats.indexOf(cat=> cat.id !== action.payload)
+            state.cats.splice(catID,1)
+            return {...state};
         case 'DELETE_DOG':
-            return {...state, dogs: state.dogs.filter(value => value.id !== action.payload)};
+            const dogID = state.dogs.indexOf(dog=> dog.id !== action.payload)
+            state.dogs.splice(dogID,1)
+            return {...state};
         default:
             throw new Error();
     }
