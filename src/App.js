@@ -2,7 +2,7 @@ import {Route, Routes} from "react-router-dom";
 
 import {MainLayout} from "./Layout";
 import {AnimalsPage, HomePage, PostsPage} from "./pages";
-import css from './App.css';
+import css from './app.module.css';
 
 function App() {
     return (
