@@ -15,10 +15,6 @@ const MainLayouts = () => {
                 <Outlet/>
             </div>
 
-            {/*<div className={css.footer}>*/}
-            {/*    <h3> Lesson 4</h3>*/}
-            {/*</div>*/}
-
         </div>);
 };
 

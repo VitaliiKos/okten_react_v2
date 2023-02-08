@@ -54,29 +54,6 @@ const CarForm = () => {
                 </div>
             </form>
         </div>
-        // <div className={css.carForm}>
-        //     <form onSubmit={handleSubmit(save)}>
-        //
-        //         <div className="input_container">
-        //             <input type="text" placeholder={'Insert brand'} {...register('brand')}/>
-        //             {errors.brand && <h4>{errors.brand.message}</h4>}
-        //             <label>Brand</label>
-        //         </div>
-        //         <div className="input_container">
-        //             <input type="number" placeholder={'Insert year'} {...register('year')}/>
-        //             {errors.year && <h4>{errors.year.message}</h4>}
-        //             <label>Year</label>
-        //         </div>
-        //         <div className="input_container">
-        //             <input type="number" placeholder={'Insert price'} {...register('price')}/>
-        //             {errors.price && <h4>{errors.price.message}</h4>}
-        //             <label>Price</label>
-        //         </div>
-        //
-        //         <button className="btn" disabled={!isValid}>{!carForUpdate ? 'Add' : 'Update'}</button>
-        //
-        //     </form>
-        // </div>
     );
 };
 

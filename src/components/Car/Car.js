@@ -11,13 +11,11 @@ const Car = ({car}) => {
 
     return (
         <div className={css.carCard}>
-            {/*<div className={css.card_title}>*/}
                 <h3>{id}. {brand}</h3>
                 <h3>Year: {year}</h3>
                 <h3>Price: {price}</h3>
                 <button onClick={() => dispatch(carActions.setCarForUpdate(car))}>Update</button>
                 <button onClick={() => dispatch(carActions.deleteCar({id}))}>Delete</button>
-            {/*</div>*/}
         </div>
     );
 };
