@@ -1,0 +1,46 @@
+.wrapper{
+    text-align: center;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    /*background: #232427;*/
+
+}
+
+.menu {
+    min-height: 80px;
+    background-color: #282c34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu a {
+    color: gold;
+    font-size: 28px;
+    text-decoration: none;
+
+}
+
+.footer {
+    min-height: 30px;
+    background-color: #095e54;
+    color: gold;
+    display: flex;
+    justify-content: center;
+    padding-right: 28px;
+}
+
+.content {
+    width: 95%;
+    margin: 0 auto;
+    height: calc(100vh - 111px);
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.menu a[class='active'] {
+    text-decoration: underline;
+    color: red;
+}
