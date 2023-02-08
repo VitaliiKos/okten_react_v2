@@ -12,6 +12,7 @@ function App() {
             <Routes>
                 <Route path={RouterEndpoints.index} element={<MainLayouts/>}>
                     <Route path={RouterEndpoints.index} index element={<HomePage/>}/>
+
                     <Route path={RouterEndpoints.users} element={<UsersPage/>}>
                         <Route path={RouterEndpoints.userId} element={<UserDetail/>}/>
                     </Route>
@@ -19,6 +20,7 @@ function App() {
                     <Route path={RouterEndpoints.posts} element={<PostsPage/>}>
                         <Route path={RouterEndpoints.postId} element={<PostDetail/>}/>
                     </Route>
+
                     <Route path={RouterEndpoints.cars} element={<CarsPage/>}/>
 
                     <Route path={RouterEndpoints.notFound} element={<PageNotFound/>}/>

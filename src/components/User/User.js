@@ -1,23 +1,21 @@
 import React from 'react';
-import {useDispatch} from "react-redux";
 import {NavLink} from "react-router-dom";
 
-import {userActions} from "../../redux";
+import css from './user.module.css';
 
 const User = ({user}) => {
-    const {id, name, username, phone, email} = user;
-    const dispatch = useDispatch();
+    const {id, name, username} = user;
 
     return (
-        <div className={'userCard'}>
-            <h3>{id}</h3>
-            <h3>{name}</h3>
-            <h3>{username}</h3>
-            <h3>{phone}</h3>
-            <h3>{email}</h3>
-            <NavLink to={id.toString()} onClick={() => dispatch(userActions.getById({id}))}>More detail
-                response</NavLink>
-        </div>
+        <NavLink to={id.toString()} className={css.userItem}>
+            <div className={css.userCard}>
+                <div className={css.card_title}>
+                    <h3>{id}</h3>
+                    <h3>{name}</h3>
+                    <h3>{username}</h3>
+                </div>
+            </div>
+        </NavLink>
     );
 };
 

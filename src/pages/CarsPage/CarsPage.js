@@ -15,14 +15,13 @@ const CarsPage = () => {
     }, [dispatch]);
 
     return (
-        <div className={css.carsList}>
+        <div className={css.carWrapper}>
             <CarForm/>
 
-            {
+            <div className={css.carListBlock}>{
                 cars &&
                 cars.map(car => <Car key={car.id} car={car}/>)
-            }
-
+            }</div>
         </div>
     );
 };

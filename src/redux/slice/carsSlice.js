@@ -62,7 +62,7 @@ const carSlice = createSlice({
     initialState,
     reducers: {
         setCarForUpdate: (state, action) => {
-            state.carForUpdate = action.payload.car;
+            state.carForUpdate = action.payload;
         },
 
     },

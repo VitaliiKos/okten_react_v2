@@ -4,25 +4,24 @@ import {Outlet} from "react-router-dom";
 
 import {postsActions} from "../../redux";
 import Post from "../../components/Post/Post";
+import css from './postPage.module.css'
 
 const PostsPage = () => {
     const dispatch = useDispatch();
-    const {posts} = useSelector(state => state.posts);
+    const {posts, selectedPost} = useSelector(state => state.posts);
 
     useEffect(() => {
         dispatch(postsActions.getAll());
-    }, [dispatch]);
+    }, [dispatch, selectedPost]);
 
     return (
-        <div>
-
+        <div className={css.wrapperPosts}>
             <Outlet/>
-
-            {
-                posts &&
-                posts.map(post => <Post key={post.id} post={post}/>)
-            }
-
+            <div className={css.postsListBlock}>
+                {
+                    posts.map(post => <Post key={post.id} post={post}/>)
+                }
+            </div>
         </div>
     );
 };

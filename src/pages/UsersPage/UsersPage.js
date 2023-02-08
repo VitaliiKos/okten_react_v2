@@ -4,24 +4,24 @@ import {Outlet} from "react-router-dom";
 
 import {userActions} from "../../redux";
 import {User} from "../../components";
+import css from './userPage.module.css';
 
 const UsersPage = () => {
     const dispatch = useDispatch();
-    const {users} = useSelector(state => state.users);
+    const {users, selectedUser} = useSelector(state => state.users);
 
     useEffect(() => {
         dispatch(userActions.getAll());
-    }, [dispatch]);
+    }, [dispatch, selectedUser]);
 
     return (
-        <div>
-
+        <div className={css.wrapper}>
             <Outlet/>
-
-            {
-                users && users.map(user => <User key={user.id} user={user}/>)
-            }
-
+            <div className={css.userListBlock}>
+                {
+                    users && users.map(user => <User key={user.id} user={user}/>)
+                }
+            </div>
         </div>
     );
 };

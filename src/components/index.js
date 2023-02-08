@@ -6,3 +6,4 @@ export * from './PostDetail/PostDetail';
 export * from './User/User';
 export * from './UserDetail/UserDetail';
 export * from './UserPost/UserPost';
+export * from './Comment/Comment';

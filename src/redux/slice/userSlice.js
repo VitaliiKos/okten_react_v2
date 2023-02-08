@@ -35,9 +35,9 @@ const getById = createAsyncThunk(
 );
 const getUserPosts = createAsyncThunk(
     'userSlice/getUserPosts',
-    async ({selectedUser}, thunkAPI) => {
+    async ({id}, thunkAPI) => {
         try {
-            const {data} = await usersServices.getUserPosts(selectedUser.id);
+            const {data} = await usersServices.getUserPosts(id);
             return data;
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data);
@@ -53,9 +53,9 @@ const userSlice = createSlice({
         setSelectedUser: (state, action) => {
             state.selectedUser = action.payload;
         },
-        clearPosts: (state) => {
-            state.userPosts = null;
-        }
+        // clearPosts: (state) => {
+        //     state.userPosts = null;
+        // }
     },
     extraReducers:
         builder => builder
@@ -94,8 +94,8 @@ const userSlice = createSlice({
             })
 });
 
-const {reducer: userReducer, actions: {setSelectedUser, clearPosts}} = userSlice;
+const {reducer: userReducer, actions: {setSelectedUser}} = userSlice;
 
-const userActions = {getAll, setSelectedUser, getById, getUserPosts, clearPosts};
+const userActions = {getAll, setSelectedUser, getById, getUserPosts};
 
 export {userReducer, userActions};

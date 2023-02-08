@@ -1,18 +1,21 @@
 import React from 'react';
 import {NavLink} from "react-router-dom";
-import {useDispatch} from "react-redux";
 
-import {postsActions} from "../../redux";
+import css from './post.module.css';
 
 const Post = ({post}) => {
-    const {id, title} = post;
-    const dispatch = useDispatch();
+    const {id, title, userId} = post;
 
     return (
-        <div>
-            <h4>{id}. {title}</h4>
-            <NavLink to={id.toString()} onClick={() => dispatch(postsActions.getById({id}))}>Show detail</NavLink>
-        </div>
+        <NavLink to={id.toString()} className={css.postItem}>
+            <div className={css.postCard}>
+                <div className={css.card_title}>
+                    <h3>Id: {id}.</h3>
+                    <h3>UserId: {userId}</h3>
+                    <h3>{title}</h3>
+                </div>
+            </div>
+        </NavLink>
     );
 };
 

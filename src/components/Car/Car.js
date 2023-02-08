@@ -2,6 +2,7 @@ import React from 'react';
 import {useDispatch} from "react-redux";
 
 import {carActions} from "../../redux";
+import css from "./car.module.css";
 
 const Car = ({car}) => {
 
@@ -9,12 +10,14 @@ const Car = ({car}) => {
     const dispatch = useDispatch();
 
     return (
-        <div>
-            <h4>{id}. {brand}</h4>
-            <h4>Year: {year}</h4>
-            <h4>Price: {price}</h4>
-            <button onClick={() => dispatch(carActions.setCarForUpdate({car}))}>Update</button>
-            <button onClick={() => dispatch(carActions.deleteCar({id}))}>Delete</button>
+        <div className={css.carCard}>
+            {/*<div className={css.card_title}>*/}
+                <h3>{id}. {brand}</h3>
+                <h3>Year: {year}</h3>
+                <h3>Price: {price}</h3>
+                <button onClick={() => dispatch(carActions.setCarForUpdate(car))}>Update</button>
+                <button onClick={() => dispatch(carActions.deleteCar({id}))}>Delete</button>
+            {/*</div>*/}
         </div>
     );
 };
