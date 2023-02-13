@@ -6,14 +6,16 @@ let initialState = {
     cars: [],
     errors: null,
     loading: null,
-    carForUpdate: null
+    carForUpdate: null,
+    prevPage: null,
+    nextPage: null
 };
 
 const getAll = createAsyncThunk(
     'carSlice/getAll',
-    async (_, thunkAPI) => {
+    async ({page}, thunkAPI) => {
         try {
-            const {data} = await carsServices.getAll();
+            const {data} = await carsServices.getAll(page);
             return data;
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data);
@@ -26,7 +28,7 @@ const deleteCar = createAsyncThunk(
     async ({id}, thunkAPI) => {
         try {
             await carsServices.deleteById(id);
-            thunkAPI.dispatch(getAll());
+            thunkAPI.dispatch(getAll({page:1}));
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data);
         }
@@ -38,7 +40,7 @@ const createNew = createAsyncThunk(
     async ({car}, thunkAPI) => {
         try {
             await carsServices.addNew(car);
-            thunkAPI.dispatch(getAll());
+            thunkAPI.dispatch(getAll({page:1}));
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data);
         }
@@ -50,7 +52,7 @@ const updateCar = createAsyncThunk(
     async ({carId, car}, thunkAPI) => {
         try {
             await carsServices.putById(carId, car);
-            thunkAPI.dispatch(getAll());
+            thunkAPI.dispatch(getAll({page:1}));
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data);
         }
@@ -69,7 +71,10 @@ const carSlice = createSlice({
     extraReducers: builder => builder
         .addCase(getAll.fulfilled, (state, action) => {
             state.loading = false;
-            state.cars = action.payload;
+            const {prev, next, items} = action.payload;
+            state.prevPage = prev;
+            state.nextPage = next;
+            state.cars = items;
         })
         .addCase(getAll.rejected, (state, action) => {
             state.loading = false;

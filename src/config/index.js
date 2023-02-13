@@ -1,1 +1,1 @@
-export * from './carsUrls';
+export * from './urls';

@@ -8,7 +8,9 @@ const Header = () => {
     return (
         <div className={css.menu}>
             <NavLink to={''}>Home</NavLink>
-            <NavLink to={RouterEndpoints.cars}>Cars</NavLink>
+            <NavLink to={RouterEndpoints.login}>Login</NavLink>
+            <NavLink to={RouterEndpoints.register}>Register</NavLink>
+            {/*<NavLink to={RouterEndpoints.cars}>Cars</NavLink>*/}
         </div>
     );
 };

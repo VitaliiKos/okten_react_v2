@@ -1,12 +1,11 @@
-import {carsBreakPoint} from "../config";
-import {carAxiosService} from "./carAxiosService";
+import {mainUrls} from "../config";
+import {apiService} from "./apiService";
 
 const carsServices = {
-    getAll: () => carAxiosService.get(carsBreakPoint.cars),
-    addNew: (data) => carAxiosService.post(carsBreakPoint.cars, data),
-    // getById: (id) => carAxiosService.get(`${carsBreakPoint.cars}/${id}`),
-    deleteById: (id) => carAxiosService.delete(`${carsBreakPoint.cars}/${id}`),
-    putById: (id, data) => carAxiosService.put(`${carsBreakPoint.cars}/${id}`, data)
+    getAll: (page=1) => apiService.get(mainUrls.cars.cars, {params:{page}}),
+    addNew: (data) => apiService.post(mainUrls.cars.cars, data),
+    deleteById: (id) => apiService.delete(mainUrls.cars.byId(id)),
+    putById: (id, data) => apiService.put(mainUrls.cars.byId(id), data)
 }
 
 export {carsServices};

@@ -1,2 +1,4 @@
-export * from './carAxiosService';
+export * from './apiService';
 export * from './cars.service';
+export * from './authService';
+export * from './register.service';
