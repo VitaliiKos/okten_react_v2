@@ -5,12 +5,12 @@ export interface IMissionInterface {
         site_name_long: string;
     },
     links: ILink;
-    rocket: IRocket
+    rocket: IRocket;
 }
 
 
 interface ILink {
-    article_link: null,
+    article_link: null | string;
     video_link: string;
 }
 
@@ -19,23 +19,23 @@ interface ICore {
     status: string | boolean;
 }
 
+interface ICores {
+    flight: number;
+    core: ICore;
+}
+
 interface IFirstStage {
-    cores: [
-        {
-            flight: number;
-            core: ICore
-        }
-    ]
+    cores: ICores[];
+}
+
+interface IPayloads {
+    payload_type: string;
+    payload_mass_kg: number;
+    payload_mass_lbs: number;
 }
 
 interface ISecondStage {
-    payloads: [
-        {
-            payload_type: string;
-            payload_mass_kg: number;
-            payload_mass_lbs: number;
-        }
-    ]
+    payloads: IPayloads[];
 }
 
 interface IRocket {
